@@ -16,13 +16,16 @@ export default function DashboradLayout({
   users,
   revenue,
   notifications,
+  login,
 }: {
   children: ReactNode;
   users: ReactNode;
   revenue: ReactNode;
   notifications: ReactNode;
+  login: ReactNode;
 }) {
-  return (
+  const isLoggedIn = true;
+  return isLoggedIn ? (
     <div className="container mx-auto">
       <div>{children}</div>
       <div className="flex gap-2">
@@ -35,5 +38,7 @@ export default function DashboradLayout({
         </div>
       </div>
     </div>
+  ) : (
+    login
   );
 }
